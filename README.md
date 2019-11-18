@@ -39,13 +39,13 @@ kubectl get nodes
 
 *creation des services:*  
 
-'''kubectl create -f flink-configuration-configmap.yaml'''  
+'kubectl create -f flink-configuration-configmap.yaml'  
 
-'''kubectl create -f jobmanager-deployment.yaml'''  
+'kubectl create -f jobmanager-deployment.yaml'  
 
-'''kubectl create -f taskmanager-deployment.yaml'''  
+'kubectl create -f taskmanager-deployment.yaml'  
 
-'''kubectl create -f jobmanager-service.yaml'''  
+'kubectl create -f jobmanager-service.yaml'  
 
 **Création d'un cluster Kafka**  
 
