@@ -5,7 +5,7 @@ Dans l'exemple on considére que le nom du domaine est "ensimag.com"
 **Etape 1: création du nom de domaine**
 creation d’un nom de domaine public et configuration des dns en ajoutant les sous services  fournis par le route53 du aws
 **Etape 2: creation S3 bucket pour stocker l’état du cluster**
-'''aws s3 mb s3://clusters.sdtd.ensimag.com'''
+'aws s3 mb s3://clusters.sdtd.ensimag.com'
 //afin de ne pas la modifier à chaque fois
 '''export KOPS_STATE_STORE=s3://clusters.sdtd.ensimag.com'''
 **Etape3:creation du cluster**
