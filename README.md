@@ -35,20 +35,37 @@ kubectl get nodes
 
 **Etapes 4: déploiment de Flink**  
 
-//les ressources sont disponibles
-*creation des services:*
-'''kubectl create -f flink-configuration-configmap.yaml'''
-'''kubectl create -f jobmanager-deployment.yaml'''
-'''kubectl create -f taskmanager-deployment.yaml'''
-'''kubectl create -f jobmanager-service.yaml'''
-**Création d'un cluster Kafka**
-après installation du Helm on crée un graphique avec le nom de version my-kafka dans l'espace de noms par défaut
-helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubator 
-helm install --name my-kafka incubator/kafka 
-helm install --name my-kafka -f values.yaml incubateur / kafka 
-on peut se connecter à Kafka en exécutant un simple pod dans le cluster avec la configuration dans le fichier testclient.yaml
-Une fois on a exécuté le pod testclient, on peut répertorier tous les sujets kafka avec:
-kubectl -n kafka exec -ti testclient -- ./bin/kafka-topics.sh --zookeeper my-release-zookeeper:2181 --list
-Où my-release est le nom de votre version de barre.
-sinon pour un déploiment sans Helm 
-https://github.com/Yolean/kubernetes-kafka
+//les ressources sont disponibles  
+
+*creation des services:*  
+
+'''kubectl create -f flink-configuration-configmap.yaml'''  
+
+'''kubectl create -f jobmanager-deployment.yaml'''  
+
+'''kubectl create -f taskmanager-deployment.yaml'''  
+
+'''kubectl create -f jobmanager-service.yaml'''  
+
+**Création d'un cluster Kafka**  
+
+après installation du Helm on crée un graphique avec le nom de version my-kafka dans l'espace de noms par défaut  
+
+helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubator   
+
+helm install --name my-kafka incubator/kafka   
+
+helm install --name my-kafka -f values.yaml incubateur / kafka   
+
+on peut se connecter à Kafka en exécutant un simple pod dans le cluster avec la configuration dans le fichier testclient.yaml  
+
+Une fois on a exécuté le pod testclient, on peut répertorier tous les sujets kafka avec:  
+
+kubectl -n kafka exec -ti testclient -- ./bin/kafka-topics.sh --zookeeper my-release-zookeeper:2181 --list  
+
+Où my-release est le nom de votre version de barre.  
+
+sinon pour un déploiment sans Helm   
+
+https://github.com/Yolean/kubernetes-kafka  
+
